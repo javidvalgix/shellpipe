@@ -22,18 +22,19 @@ export default function TitleBar() {
 
   return (
     <div
-      data-tauri-drag-region
       className="fixed top-0 left-0 w-full h-8 flex items-center justify-between z-50 select-none bg-background border-border"
     >
+      {/* Drag region as background layer — does not intercept child clicks on macOS */}
+      <div data-tauri-drag-region className="absolute inset-0" />
+
       <span
-        data-tauri-drag-region
-        className="flex items-center gap-2 pl-3 text-sm font-semibold text-foreground pointer-events-none"
+        className="flex items-center gap-2 pl-3 text-sm font-semibold text-foreground pointer-events-none relative"
       >
       <img src={ShellpipeIcon} alt="Shellpipe Icon" className="h-6 w-6" />
       Shellpipe
     </span>
 
-      <div className="flex h-full items-center">
+      <div className="flex h-full items-center relative">
         <div className="flex items-center px-1 gap-0.5 mt-0.5">
           <ProcessPanel />
           <SettingsDialog dialogOpen={settingsOpen} onOpenChange={setSettingsOpen} />

@@ -6,8 +6,10 @@ import { Toaster } from "./components/ui/sonner";
 import { useEffect } from "react";
 import useSessionStore from "./stores/session.store";
 
+// Initialize once at module level, not on every render
+enableMapSet();
+
 function App() {
-  enableMapSet();
 
   const disconnectAllSessions = useSessionStore((state) => state.disconnectAllSessions);
   useEffect(() => {

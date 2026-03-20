@@ -111,8 +111,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     // Render
     return (
         <Sidebar collapsible="offcanvas" {...props}>
-            <SidebarHeader data-tauri-drag-region className="absolute top-0 left-0 z-10 flex flex-row h-[56px] flex items-center justify-between bg-gradient-to-b   from-background via-background to-transparent w-full">
-                <div className="flex items-center gap-1">
+            <SidebarHeader className="absolute top-0 left-0 z-10 flex flex-row h-[56px] flex items-center justify-between bg-gradient-to-b   from-background via-background to-transparent w-full">
+                <div data-tauri-drag-region className="absolute inset-0 z-0" />
+                <div className="flex items-center gap-1 relative z-10">
                     <SessionWizardDialog
                         dialogOpen={sessionWizardOpen}
                         onOpenChange={(open) => setSessionWizardOpen(open)}

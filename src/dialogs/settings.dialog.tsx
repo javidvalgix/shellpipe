@@ -144,7 +144,8 @@ export function SettingsDialog({ dialogOpen, onOpenChange }: Props) {
                         </SidebarContent>
                     </Sidebar>
                     <main className="flex h-[480px] flex-1 flex-col overflow-hidden">
-                        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12" data-tauri-drag-region>
+                        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 relative">
+                            <div data-tauri-drag-region className="absolute inset-0" />
                             <div className="flex items-center gap-2 px-4">
                                 <Breadcrumb>
                                     <BreadcrumbList>
@@ -441,7 +442,7 @@ export function SettingsDialog({ dialogOpen, onOpenChange }: Props) {
 
                                         <div className="mt-4 space-y-1">
                                             <p className="text-muted-foreground text-sm">
-                                                Version: <span className="font-semibold">0.1.0</span>
+                                                Version: <span className="font-semibold">0.1.3</span>
                                             </p>
                                             <Button className="mt-2" variant="outline" onClick={() => openUrl("https://github.com/javidvalgix/shellpipe")}>
                                                 Github <Github />

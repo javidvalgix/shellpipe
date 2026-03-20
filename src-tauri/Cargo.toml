@@ -1,6 +1,6 @@
 [package]
 name = "Shellpipe"
-version = "0.1.2"
+version = "0.1.3"
 description = "Shellpipe is a modern SSH Client & SFTP file management application."
 authors = ["javidvalgix"]
 edition = "2018"

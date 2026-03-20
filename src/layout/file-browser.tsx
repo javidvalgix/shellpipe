@@ -237,7 +237,7 @@ export default function FileBrowser() {
                                 </DropdownMenu>
 
                                 {/* Space for window controls */}
-                                <div className="w-[80px] h-10 flex-shrink-0" data-tauri-drag-region>
+                                <div className="w-[80px] h-10 flex-shrink-0">
 
                                 </div>
                             </div>
