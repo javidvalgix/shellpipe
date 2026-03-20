@@ -14,14 +14,18 @@ use terminal::TerminalManager;
 use tauri::Manager;
 
 #[tauri::command]
-async fn show_main_window(app_handle: tauri::AppHandle) {
-    if let Some(main_window) = app_handle.get_webview_window("main") {
-        let _ = main_window.show();
-        let _ = main_window.set_focus();
-    }
-    if let Some(updater_window) = app_handle.get_webview_window("updater") {
-        let _ = updater_window.close();
-    }
+fn show_main_window(app_handle: tauri::AppHandle) {
+    // Window operations on macOS (AppKit) must run on the main thread.
+    // Using run_on_main_thread ensures this works correctly on Apple Silicon.
+    let _ = app_handle.run_on_main_thread(move || {
+        if let Some(main_window) = app_handle.get_webview_window("main") {
+            let _ = main_window.show();
+            let _ = main_window.set_focus();
+        }
+        if let Some(updater_window) = app_handle.get_webview_window("updater") {
+            let _ = updater_window.close();
+        }
+    });
 }
 
 #[tauri::command]

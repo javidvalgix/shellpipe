@@ -40,14 +40,22 @@ export default function Updater() {
         } else {
           setStatus("Up to date!");
           setTimeout(async () => {
-            await invoke("show_main_window");
+            try {
+              await invoke("show_main_window");
+            } catch (e) {
+              console.error("show_main_window failed:", e);
+            }
           }, 800);
         }
       } catch (error) {
         console.error("Update check failed:", error);
         setStatus("Starting...");
         setTimeout(async () => {
-          await invoke("show_main_window");
+          try {
+            await invoke("show_main_window");
+          } catch (e) {
+            console.error("show_main_window failed:", e);
+          }
         }, 1200);
       }
     }
