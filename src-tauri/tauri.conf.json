@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420"
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "productName": "Shellpipe",
+  "mainBinaryName": "Shellpipe",
+  "version": "0.1.0",
+  "identifier": "com.shellpipe.crossplatform",
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDczRjM2RDM0QzdENjUwNTkKUldSWlVOYkhORzN6YytkK0U1QTZTNGo0a0JZRXZ5am5jaEE1UkxNemJ1dk9QWVQrQlVGQ2tKMjIK",
+      "endpoints": [
+        "https://github.com/javidvalgix/shellpipe/releases/latest/download/latest.json"
+      ]
+    }
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "Shellpipe",
+        "width": 1300,
+        "height": 720,
+        "resizable": true,
+        "decorations": false,
+        "minWidth": 1000,
+        "minHeight": 720,
+        "shadow": true,
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "updater",
+        "title": "Shellpipe",
+        "width": 360,
+        "height": 240,
+        "resizable": false,
+        "decorations": false,
+        "center": true,
+        "url": "index.html",
+        "visible": true
+      }
+    ]
+  }
+}
