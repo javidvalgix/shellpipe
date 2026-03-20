@@ -7,7 +7,7 @@ Manage your SFTP servers from a fast, native desktop app — no subscriptions, n
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
-![Version](https://img.shields.io/badge/version-0.1.0-green)
+![Version](https://img.shields.io/badge/version-0.1.1-green)
 
 </div>
 

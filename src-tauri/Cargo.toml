@@ -1,6 +1,6 @@
 [package]
 name = "Shellpipe"
-version = "0.1.0"
+version = "0.1.1"
 description = "Shellpipe is a modern SSH Client & SFTP file management application."
 authors = ["javidvalgix"]
 edition = "2018"
@@ -23,6 +23,7 @@ tauri-plugin-shell = "2"
 once_cell = "1.21.3"
 tauri-plugin-opener = "2"
 tauri-plugin-updater = "2"
+openssl = { version = "0.10", features = ["vendored"] }
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
